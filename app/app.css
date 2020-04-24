@@ -1,0 +1,10 @@
+body {
+  padding-top: 70px;
+}
+
+.view-frame {
+  padding: 0 50px;
+  min-width: 300px;
+  max-width: 1000px;
+  margin: 0 auto;
+}

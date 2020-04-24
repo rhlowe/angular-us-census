@@ -1,0 +1,19 @@
+<div>
+  <div class="page-header">
+    <h1>US Population by State <small>as per the 2010 US Census</small></h1>
+  </div>
+
+  <div ng-if="$ctrl.status === 'loading'">
+    Loading...
+  </div>
+
+  <div class="panel panel-info" ng-if="$ctrl.status === 'loaded'" ng-repeat="state in $ctrl.states" href="{{ ::state[0] }}">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{ ::state[0] }}</h3>
+    </div>
+    <div class="panel-body">
+      <div>Population: {{ ::$ctrl.formatNumber(state[1]) }}</div>
+      <div>Population Density: {{ ::$ctrl.formatFloat(state[2]) }}</div>
+    </div>
+  </div>
+</div>

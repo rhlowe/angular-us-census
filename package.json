@@ -1,0 +1,29 @@
+{
+  "name": "angularjs-challenge",
+  "private": true,
+  "version": "0.2.0",
+  "description": "An AngularJS challenge for b.well front-end engineering candidates",
+  "repository": "https://github.com/icanbwell/angularjs-challenge",
+  "dependencies": {
+    "angular": "1.7.x",
+    "angular-animate": "1.7.x",
+    "angular-resource": "1.7.x",
+    "angular-route": "1.7.x",
+    "angular-ui-bootstrap": "^2.5.6",
+    "bootstrap": "3.3.x",
+    "jquery": "3.3.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.7.x",
+    "cpx": "^1.5.0",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "postinstall": "npm run copy-libs",
+    "update-deps": "npm update",
+    "postupdate-deps": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist,jquery/dist}/**/*\" app/lib -C",
+    "prestart": "npm install",
+    "start": "http-server ./app -a localhost -p 8000 -c-1"
+  }
+}
