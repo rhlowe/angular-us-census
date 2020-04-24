@@ -20,3 +20,7 @@ We have put together a brand new application to pull population data by state fr
 
 - Provide a navigation list of states/counties
 - Write tests
+
+## API
+
+https://api.census.gov/data/2019/pep/population?get=DENSITY,POP,NAME,STATE&for=county:*&in=state:*&DATE_CODE=12
