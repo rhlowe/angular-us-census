@@ -1,19 +1,26 @@
 <div>
   <div class="page-header">
-    <h1>US Population by State <small>as per the 2010 US Census</small></h1>
+    <h1>US Population by State <small class="text-muted h4">as per the 2010 US Census</small></h1>
   </div>
+
+  <hr>
 
   <div ng-if="$ctrl.status === 'loading'">
     Loading...
   </div>
 
   <div class="card card-info" ng-if="$ctrl.status === 'loaded'" ng-repeat="state in $ctrl.states">
-    <div class="card-body">
+    <div class="card-header">
       <h3 class="card-title">{{ ::state[0] }}</h3>
-      <div class="card-text">
-        <div>Population: {{ ::$ctrl.formatNumber(state[1]) }}</div>
-        <div>Population Density: {{ ::$ctrl.formatFloat(state[2]) }}</div>
-      </div>
+    </div>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Population: {{ ::$ctrl.formatNumber(state[1]) }}</li>
+      <li class="list-group-item">Population Density: {{ ::$ctrl.formatFloat(state[2]) }}</li>
+    </ul>
+
+    <div class="card-body">
+      <a class="btn btn-primary" href="/#!/states/{{ ::state[4] }}">View county data for {{ ::state[0] }}</a>
     </div>
   </div>
 </div>
