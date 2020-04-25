@@ -9,7 +9,7 @@ angular.
           template: '<states></states>',
         }).
         when('/states/:stateID', {
-          template: '<h2>Hi</h2>',
+          template: '<counties></counties>',
         }).
         otherwise('/states');
     }

@@ -23,4 +23,4 @@ We have put together a brand new application to pull population data by state fr
 
 ## API
 
-https://api.census.gov/data/2019/pep/population?get=DENSITY,POP,NAME,STATE&for=county:*&in=state:*&DATE_CODE=12
+https://api.census.gov/data/2019/pep/population?get=DENSITY,POP,NAME,STATE&for=county:*&in=state:*&DATE_CODE=1

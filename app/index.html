@@ -17,6 +17,8 @@
     <script src="app.constants.js"></script>
     <script src="states/states.component.js"></script>
     <script src="states/states.service.js"></script>
+    <script src="counties/counties.component.js"></script>
+    <script src="counties/counties.service.js"></script>
   </head>
 
   <body>
@@ -24,18 +26,8 @@
       <!-- Navigation bar -->
       <nav class="navbar navbar-light bg-light sticky-top" role="navigation">
         <div class="navbar-header">
-          <!-- <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button> -->
           <a class="navbar-brand" href="#">b.well AngularJS Challenge</a>
         </div>
-        <!-- <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
-          <ul class="nav navbar-nav">
-          </ul>
-        </div> -->
       </nav>
       <!-- Content -->
       <div ng-view class="view-frame"></div>

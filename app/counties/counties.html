@@ -1,0 +1,28 @@
+<div>
+  <div class="page-header">
+    <h1>{{ ::$ctrl.getState() }} Population by County <small class="text-muted h4">as per the 2010 US Census</small></h1>
+  </div>
+
+  <div ng-if="$ctrl.status === 'loading'">
+    <hr>
+
+    Loading...
+  </div>
+
+  <table ng-if="$ctrl.status === 'loaded'" class="table table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">County Name</th>
+        <th scope="col">Population</th>
+        <th scope="col">Pop. Density</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="county in $ctrl.counties" data-id="{{ county[6] }}">
+        <td scope="row">{{ county[0] }}</td>
+        <td>{{ ::$ctrl.formatNumber(county[1]) }}</td>
+        <td>{{ ::$ctrl.formatFloat(county[2]) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

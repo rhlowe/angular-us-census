@@ -2,8 +2,8 @@
 
 AngularJsChallenge.component('states', {
     templateUrl: 'states/states.html',
-    controller: ['$q', 'StatesService',
-        function ($q, StatesService) {
+    controller: ['$q', 'StatesService', '$rootScope',
+        function ($q, StatesService, $rootScope) {
             const self = this;
             self.status = 'loading';
 
@@ -14,6 +14,9 @@ AngularJsChallenge.component('states', {
                     return a[0] > b[0] // sort on state name
                 });
                 self.status = 'loaded';
+                $rootScope.$on('$routeChangeStart', function(event, next, current) {
+                    $rootScope.activeState = self.states.find(state => state[4] === next.params.stateID);
+                });
             });
 
             this.formatNumber = (number) => {
