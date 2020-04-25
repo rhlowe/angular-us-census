@@ -7,13 +7,13 @@
     Loading...
   </div>
 
-  <div class="panel panel-info" ng-if="$ctrl.status === 'loaded'" ng-repeat="state in $ctrl.states" href="{{ ::state[0] }}">
-    <div class="panel-heading">
-      <h3 class="panel-title">{{ ::state[0] }}</h3>
-    </div>
-    <div class="panel-body">
-      <div>Population: {{ ::$ctrl.formatNumber(state[1]) }}</div>
-      <div>Population Density: {{ ::$ctrl.formatFloat(state[2]) }}</div>
+  <div class="card card-info" ng-if="$ctrl.status === 'loaded'" ng-repeat="state in $ctrl.states">
+    <div class="card-body">
+      <h3 class="card-title">{{ ::state[0] }}</h3>
+      <div class="card-text">
+        <div>Population: {{ ::$ctrl.formatNumber(state[1]) }}</div>
+        <div>Population Density: {{ ::$ctrl.formatFloat(state[2]) }}</div>
+      </div>
     </div>
   </div>
 </div>

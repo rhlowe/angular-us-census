@@ -8,6 +8,9 @@ angular.
         when('/states', {
           template: '<states></states>',
         }).
+        when('/states/:stateID', {
+          template: '<h2>Hi</h2>',
+        }).
         otherwise('/states');
     }
   ]);
