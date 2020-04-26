@@ -2,8 +2,8 @@
   "name": "angularjs-challenge",
   "private": true,
   "version": "0.2.0",
-  "description": "An AngularJS challenge for b.well front-end engineering candidates",
-  "repository": "https://github.com/icanbwell/angularjs-challenge",
+  "description": "AngularJS Census App",
+  "repository": "https://github.com/rhlowe/angular-us-census",
   "dependencies": {
     "angular": "1.7.x",
     "angular-animate": "1.7.x",
