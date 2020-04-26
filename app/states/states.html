@@ -11,16 +11,16 @@
 
   <div class="card card-info" ng-if="$ctrl.status === 'loaded'" ng-repeat="state in $ctrl.states">
     <div class="card-header">
-      <h3 class="card-title">{{ ::state[0] }}</h3>
+      <h3 class="card-title">{{ ::state.name }}</h3>
     </div>
 
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Population: {{ ::$ctrl.formatNumber(state[1]) }}</li>
-      <li class="list-group-item">Population Density: {{ ::$ctrl.formatFloat(state[2]) }}</li>
+      <li class="list-group-item">Population: {{ ::$ctrl.formatNumber(state.pop) }}</li>
+      <li class="list-group-item">Population Density: {{ ::$ctrl.formatFloat(state.density) }}</li>
     </ul>
 
     <div class="card-body">
-      <a class="btn btn-primary" href="/#!/states/{{ ::state[4] }}">View county data for {{ ::state[0] }}</a>
+      <a class="btn btn-primary" href="/#!/states/{{ ::state.state }}">View county data for {{ ::state.name }}</a>
     </div>
   </div>
 </div>

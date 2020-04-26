@@ -8,7 +8,8 @@ AngularJsChallenge.component("counties", {
     "CountiesService",
     "$rootScope",
     "FormatService",
-    function ($routeParams, $q, CountiesService, $rootScope, FormatService) {
+    "ObjectService",
+    function ($routeParams, $q, CountiesService, $rootScope, FormatService, ObjectService) {
       const self = this;
       self.status = "loading";
 
@@ -17,14 +18,14 @@ AngularJsChallenge.component("counties", {
           return response.json();
         })
         .then((data) => {
-          self.counties = data.slice(1).sort((a, b) => {
-            return a[0] > b[0]; // sort on county name
+          self.counties = ObjectService.objectifyArray(data).sort((a, b) => {
+            return a.name > b.name; // sort on county name
           });
           self.status = "loaded";
         });
 
       this.getState = () => {
-        return $rootScope.activeState ? $rootScope.activeState[0] : "State";
+        return $rootScope.activeState ? $rootScope.activeState.name : "State";
       };
 
       this.formatNumber = (number) => {

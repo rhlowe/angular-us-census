@@ -7,7 +7,8 @@ AngularJsChallenge.component("states", {
     "StatesService",
     "$rootScope",
     "FormatService",
-    function ($q, StatesService, $rootScope, FormatService) {
+    "ObjectService",
+    function ($q, StatesService, $rootScope, FormatService, ObjectService) {
       const self = this;
       self.status = "loading";
 
@@ -16,13 +17,13 @@ AngularJsChallenge.component("states", {
           return response.json();
         })
         .then((data) => {
-          self.states = data.slice(1).sort((a, b) => {
-            return a[0] > b[0]; // sort on state name
+          self.states = ObjectService.objectifyArray(data).sort((a, b) => {
+            return a.name > b.name; // sort on state name
           });
           self.status = "loaded";
           $rootScope.$on("$routeChangeStart", function (event, next, current) {
             $rootScope.activeState = self.states.find(
-              (state) => state[4] === next.params.stateID
+              (state) => state.state === next.params.stateID
             );
           });
         });
