@@ -8,3 +8,16 @@
 .card {
   margin-bottom: 1rem;
 }
+
+@media (min-width: 768px) {
+  .card-box {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0;
+  }
+
+  .card {
+
+  }
+}
