@@ -5,7 +5,7 @@
   "description": "An AngularJS challenge for b.well front-end engineering candidates",
   "repository": "https://github.com/icanbwell/angularjs-challenge",
   "dependencies": {
-    "angular": "1.7.x",
+    "angular": "1.8.x",
     "angular-animate": "1.7.x",
     "angular-resource": "1.7.x",
     "angular-route": "1.7.x",
